@@ -1,0 +1,43 @@
+{
+	"Header": {
+		"prefix": "hdr",
+		"body": [
+			"/**",
+			" * Copyright (c) $CURRENT_YEAR Design + Industry. All Rights Reserved.",
+			" * @file    $TM_FILENAME",
+			" * @author  ${1:author}",
+			" * @date    $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR",
+			" */",
+			""
+		],
+		"description": "A Formated TS Header"
+	},
+	"FileName UpperCase Underscorred": {
+		"prefix": "fnu",
+		"body": [
+			"${TM_FILENAME/(.*)[\\.](\\w)/_${1:/upcase}_${2:/upcase}/g}"
+		],
+		"description": "insert filename uppercase underscored"
+	},
+	"Test Skeleton": {
+		"prefix": "tst",
+		"body": [
+			"[TestClass]",
+			"public class Test${1:className}",
+			"{",
+			"",
+			"    public Test${1:className}()",
+			"    {",
+			"    }",
+			"",
+			"    [TestMethod]",
+			"    public void TestX()",
+			"    {",
+			"    }",
+			"}",
+			"",
+			""
+		],
+		"description": "Test File Skeleton"
+	}
+}

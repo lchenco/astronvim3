@@ -1,0 +1,102 @@
+{
+	"C/CPP Header": {
+		"prefix": "hdr",
+		"body": [
+			"/**",
+			" * Copyright (c) $CURRENT_YEAR Design + Industry. All Rights Reserved.",
+			" * @file    $TM_FILENAME",
+			" * @author  ${1:author}",
+			" * @date    $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR",
+			" */",
+			""
+		],
+		"description": "A Formated C/CPP Header"
+	},
+	"C/CPP H-File Header": {
+		"prefix": "hdrh",
+		"body": [
+			"/**",
+			" * Copyright (c) $CURRENT_YEAR Design + Industry. All Rights Reserved.",
+			" * @file    $TM_FILENAME",
+			" * @author  ${1:author}",
+			" * @date    $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR",
+			" */",
+			"",
+			"#ifndef ${TM_FILENAME/(.*)[\\.](\\w)/${1:/upcase}_${2:/upcase}/g}",
+			"#define ${TM_FILENAME/(.*)[\\.](\\w)/${1:/upcase}_${2:/upcase}/g}",
+			"",
+			"#include <stdint.h>",
+			"#include <stdlib.h>",
+			"#include \"retcode.h\"",
+			"",
+			"#endif //${TM_FILENAME/(.*)[\\.](\\w)/${1:/upcase}_${2:/upcase}/g}"
+		],
+		"description": "A Formated C/CPP Header"
+	},
+	"C/CPP C-File Header": {
+		"prefix": "hdrc",
+		"body": [
+			"/**",
+			" * Copyright (c) $CURRENT_YEAR Design + Industry. All Rights Reserved.",
+			" * @file    $TM_FILENAME",
+			" * @author  ${1:author}",
+			" * @date    $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR",
+			" */",
+			"",
+			"#include \"${TM_FILENAME_BASE}.h\"",
+			"",
+			"/** Private Fn Declarations",
+			" */",
+			"",
+			"/** Public Fn",
+			" */",
+			"",
+			"/** Private Fn",
+			" */"
+		],
+		"description": "A Formated C/CPP Header"
+	},
+	"Unity Testing Header": {
+		"prefix": "hdrt",
+		"body": [
+			"/**",
+			" * Copyright (c) $CURRENT_YEAR Design + Industry. All Rights Reserved.",
+			" * @file    $TM_FILENAME",
+			" * @author  ${1:author}",
+			" * @date    $CURRENT_DATE/$CURRENT_MONTH/$CURRENT_YEAR",
+			" */",
+			"",
+			"#include \"unity.h\"",
+			"",
+			"#include <stdio.h>",
+			"#include <stdint.h>",
+			"#include <stdlib.h>",
+			"#include <string.h>",
+			"",
+			"#include \"${TM_FILENAME/(test_)(.*).c/${2}.h/g}\"",
+			"",
+			"void setUp(void)",
+			"{",
+			"}",
+			"",
+			"void tearDown(void)",
+			"{",
+			"}",
+			"",
+			"void test_(void)",
+			"{",
+			"    // Given",
+			"    // When",
+			"    // Then",
+			"}"
+		],
+		"description": "Header for Unity testing framework"
+	},
+	"FileName UpperCase Underscorred": {
+		"prefix": "fnu",
+		"body": [
+			"${TM_FILENAME/(.*)[\\.](\\w)/_${1:/upcase}_${2:/upcase}/g}"
+		],
+		"description": "insert filename uppercase underscored"
+	}
+}
