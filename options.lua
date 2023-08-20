@@ -1,9 +1,5 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
-  bo = {
-    shiftwidth = 4,
-    tabstop = 4,
-  },
   opt = {
     -- set to true or false etc.
     relativenumber = true, -- sets vim.opt.relativenumber
@@ -11,6 +7,8 @@ return {
     spell = false,         -- sets vim.opt.spell
     signcolumn = "auto",   -- sets vim.opt.signcolumn to auto
     wrap = false,          -- sets vim.opt.wrap
+    shiftwidth = 4,
+    tabstop = 4,
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader
